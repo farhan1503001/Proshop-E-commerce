@@ -23,7 +23,7 @@ class Review(models.Model):
     product=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
     user=models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     name=models.CharField(max_length=200,blank=True,null=True)
-    rating=models.IntegerField(null=True,blank=True,default=0)
+    rating=models.DecimalField(null=True,blank=True,decimal_places=2,max_digits=7)
     comment=models.TextField(null=True,blank=True)
     _id=models.AutoField(primary_key=True,editable=False)
 
